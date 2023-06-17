@@ -6,6 +6,7 @@ export function IconButton(props: {
   onClick?: () => void;
   icon?: JSX.Element;
   type?: "primary" | "danger";
+  isForm?: boolean;
   text?: string;
   bordered?: boolean;
   shadow?: boolean;
@@ -24,6 +25,7 @@ export function IconButton(props: {
       onClick={props.onClick}
       title={props.title}
       disabled={props.disabled}
+      type={props.isForm ? "submit" : undefined}
       role="button"
     >
       {props.icon && (

@@ -15,7 +15,7 @@ export function AuthPage() {
   const goHome = () => navigate(Path.Home);
 
   return (
-    <div className={styles["auth-page"]}>
+    <form onSubmit={goHome} className={styles["auth-page"]}>
       <div className={`no-dark ${styles["auth-logo"]}`}>
         <BotIcon />
       </div>
@@ -34,13 +34,8 @@ export function AuthPage() {
       />
 
       <div className={styles["auth-actions"]}>
-        <IconButton
-          text={Locale.Auth.Confirm}
-          type="primary"
-          onClick={goHome}
-        />
-        <IconButton text={Locale.Auth.Later} onClick={goHome} />
+        <IconButton isForm text={Locale.Auth.Confirm} type="primary" />
       </div>
-    </div>
+    </form>
   );
 }
