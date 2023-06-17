@@ -22,7 +22,6 @@ import {
   useLocation,
 } from "react-router-dom";
 import { SideBar } from "./sidebar";
-import { useAccessStore } from "../store";
 import { useAppConfig } from "../store/config";
 import { AuthPage } from "./auth";
 import { getClientConfig } from "../config/client";
@@ -107,11 +106,10 @@ const loadAsyncGoogleFont = () => {
 };
 
 function Screen() {
-  const accessStore = useAccessStore();
   const config = useAppConfig();
   const location = useLocation();
   const isHome = location.pathname === Path.Home;
-  const isAuth = !accessStore.isAuthorized();
+  const isAuth = location.pathname === Path.Auth;
   const isMobileScreen = useMobileScreen();
 
   useEffect(() => {
