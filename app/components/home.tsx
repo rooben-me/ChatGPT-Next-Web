@@ -111,7 +111,7 @@ function Screen() {
   const config = useAppConfig();
   const location = useLocation();
   const isHome = location.pathname === Path.Home;
-  const isAuth = accessStore.isAuthorized();
+  const isAuth = !accessStore.isAuthorized();
   const isMobileScreen = useMobileScreen();
 
   useEffect(() => {
