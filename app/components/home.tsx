@@ -139,9 +139,9 @@ function Screen() {
     async function sync() {
       try {
         await syncStore.sync();
-        showToast(Locale.Settings.Sync.Success);
+        console.log("%c Success! Operation completed successfully.", "color: green;");
       } catch (e) {
-        showToast(Locale.Settings.Sync.Fail);
+        console.error("%c Error: Operation failed.", "color: red;");
         console.error("[Sync]", e);
       }
     }
